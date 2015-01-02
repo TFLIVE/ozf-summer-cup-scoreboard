@@ -15,11 +15,19 @@ var awayScore = 0;
 
 //Update score function
 function updateHomeScore(num){
+    //Score cannot be less than 0
     homeScore = homeScore + num;
+    if(homeScore < 0 ){
+        homeScore = 0;
+    }
     homeScoreLabel.text(homeScore);
 }
 function updateAwayScore(num){
+    //Score cannot be less than 0
     awayScore = awayScore + num;
+    if(awayScore < 0){
+        awayScore = 0;
+    }
     awayScoreLabel.text(awayScore);
 }
 
