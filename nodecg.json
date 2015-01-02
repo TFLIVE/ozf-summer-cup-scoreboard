@@ -1,0 +1,15 @@
+{
+  "name": "ozf-summer-cup-scoreboard",
+  "version": "0.0.1",
+  "nodecgDependency": "^0.3.0",
+  "homepage": "http://www.tflive.tv/",
+  "authors": [
+    "James McMinn <james.mcminn96@gmail.com>",
+    "Russell Ng (graphics) <russelldanielng@gmail.com>"
+  ],
+  "description": "Sits center top and has scores",
+  "resolutions": [
+    "720p"
+  ],
+  "license": "MIT"
+}
