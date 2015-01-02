@@ -1,0 +1,24 @@
+.input-group
+   .input-group-addon#score_home_score 0
+   input#score_home_title.form-control(type="text", placeholder="Home Team")
+.input-group(style="margin-top: 4px")
+   .input-group-addon#score_away_score 0
+   input#score_away_title.form-control(type="text", placeholder="Away Team")
+h4.bg-danger#score_status(style="display: none; margin-top: 8px; text-align: center; padding: 0.5em") LIVE
+.btn-group.btn-group-justified(style="margin-top: 8px")
+   .btn-group(style="padding-right: 2px")
+      button#score_show.btn.btn-xs.btn-success(type="button") Show
+   .btn-group.btn-group-justified
+      .btn-group
+         button#score_hide.btn.btn-xs.btn-danger(type="button") Hide
+.btn-group.btn-group-justified(style="margin-top: 4px")
+   .btn-group
+      button#score_home_decrement.btn.btn-xs.btn-primary(type="button") -
+   .btn-group
+      button#score_home_increment.btn.btn-xs.btn-primary(type="button") +
+   .btn-group
+      button#score_swap.btn.btn-xs.btn-primary(type="button") Swap
+   .btn-group
+      button#score_away_decrement.btn.btn-xs.btn-primary(type="button") -
+   .btn-group
+      button#score_away_increment.btn.btn-xs.btn-primary(type="button") +

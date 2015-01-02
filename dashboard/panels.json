@@ -1,0 +1,9 @@
+[
+  {
+    "name": "ozf-summer-cup-scoreboard",
+    "title": "Scoreboard",
+    "width": 2,
+    "file": "panel.jade",
+    "faIcon": "fa-list"
+  }
+]
