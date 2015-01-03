@@ -21,6 +21,7 @@ function updateHomeScore(num){
         homeScore = 0;
     }
     homeScoreLabel.text(homeScore);
+    sendScores(homeScore, awayScore);
 }
 function updateAwayScore(num){
     //Score cannot be less than 0
@@ -29,6 +30,14 @@ function updateAwayScore(num){
         awayScore = 0;
     }
     awayScoreLabel.text(awayScore);
+    sendScores(homeScore, awayScore);
+}
+
+function sendScores(home, away){
+    nodecg.sendMessage('updateScore', {
+        homeScore: home,
+        awayScore: away
+    });
 }
 
 $(showButton).click(function(){
@@ -37,6 +46,12 @@ $(showButton).click(function(){
     awayTextField.prop('disabled', true);
     swapButton.prop('disabled', true);
     //TODO: Show
+    nodecg.sendMessage('showScore', {
+        homeTeamName: homeTextField.val(),
+        homeTeamScore: homeScore,
+        awayTeamName: awayTextField.val(),
+        awayTeamScore: awayScore
+    });
 });
 
 $(hideButton).click(function(){
@@ -45,6 +60,7 @@ $(hideButton).click(function(){
     awayTextField.prop('disabled', false);
     swapButton.prop('disabled', false);
     //TODO: Hide
+    nodecg.sendMessage('hideScore');
 });
 
 $(homeMinusButton).click(function(){
