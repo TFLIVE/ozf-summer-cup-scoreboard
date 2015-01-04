@@ -57,7 +57,6 @@ $(showButton).click(function(){
 $(hideButton).click(function(){
     homeScore = 0;
     awayScore = 0;
-
     sendScores(homeScore, awayScore);
 });
 
