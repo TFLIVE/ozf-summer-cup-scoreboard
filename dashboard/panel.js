@@ -63,6 +63,29 @@ $(hideButton).click(function(){
     nodecg.sendMessage('hideScore');
 });
 
+$(swapButton).click(function (){
+
+    var tempHomeScore = homeScore;
+    var tempAwayScore = awayScore;
+    var tempHomeLabel = homeTextField.val();
+    var tempAwayLabel = awayTextField.val();
+
+    homeScore = tempAwayScore;
+    awayScore = tempHomeScore;
+    homeTextField.val(tempAwayLabel);
+    awayTextField.val(tempHomeLabel);
+
+
+
+    nodecg.sendMessage('showScore', {
+        homeTeamName: homeTextField.val(),
+        homeTeamScore: homeScore,
+        awayTeamName: awayTextField.val(),
+        awayTeamScore: awayScore
+    });
+
+});
+
 $(homeMinusButton).click(function(){
     updateHomeScore(-1);
 });

@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: din;
+    src: url(../DINOT-CONDBOLD_0.OTF);
+}
+
+#scoreboard{
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+}
+
+.textLeft{
+    float: left;
+}
+.textRight{
+    float: right;
+}
+
+.fonted{
+    top: 6px;
+    height:48px;
+    width: 380px;
+    line-height: 48px;
+    font-size: 36px;
+    color: #fff;
+    font-family: "din";
+    box-sizing: border-box;
+    background-color: transparent;
+}
+.number{
+    font-size: 48px;
+    line-height: 45px;
+}
+#score_left {
+    position: absolute;
+
+    left: 572px;
+    padding-left: 40px;
+    padding-right: 25px;
+}
+
+#score_right{
+    position: absolute;
+    left: 1036px;
+    padding-left: 25px;
+    padding-right: 40px;
+}
