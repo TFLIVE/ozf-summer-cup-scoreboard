@@ -38,14 +38,14 @@ function sendScores(home, away){
         homeScore: home,
         awayScore: away
     });
+    homeScoreLabel.text(homeScore);
+    awayScoreLabel.text(awayScore);
 }
 
 $(showButton).click(function(){
     scoreStatus.slideDown();
     homeTextField.prop('disabled', true);
     awayTextField.prop('disabled', true);
-    swapButton.prop('disabled', true);
-    //TODO: Show
     nodecg.sendMessage('showScore', {
         homeTeamName: homeTextField.val(),
         homeTeamScore: homeScore,
@@ -55,12 +55,10 @@ $(showButton).click(function(){
 });
 
 $(hideButton).click(function(){
-    scoreStatus.slideUp();
-    homeTextField.prop('disabled', false);
-    awayTextField.prop('disabled', false);
-    swapButton.prop('disabled', false);
-    //TODO: Hide
-    nodecg.sendMessage('hideScore');
+    homeScore = 0;
+    awayScore = 0;
+
+    sendScores(homeScore, awayScore);
 });
 
 $(swapButton).click(function (){
@@ -72,6 +70,8 @@ $(swapButton).click(function (){
 
     homeScore = tempAwayScore;
     awayScore = tempHomeScore;
+    homeScoreLabel.text(tempAwayScore);
+    awayScoreLabel.text(tempHomeScore);
     homeTextField.val(tempAwayLabel);
     awayTextField.val(tempHomeLabel);
 
